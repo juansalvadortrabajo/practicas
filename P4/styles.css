@@ -1,0 +1,51 @@
+*{ margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+    background-color:aliceblue;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Boton {
+    background-color: pink;
+    padding: 20px 40px;
+    font-size: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.3);
+    text-decoration: none;
+    color: black;
+    position: relative;
+    overflow: hidden;
+}
+
+.Boton span{
+    position: relative;
+    z-index: 1;
+
+}
+
+.Boton::before {
+    content: "";
+    position: absolute;
+    background-color: red;
+    width: 0px;
+    height: 0px;
+    left: var(--Xpos);
+    top: var(--Ypos);
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    transition: width 0.5s, heigth 0.5s;
+
+}
+
+.Boton:hover::before{
+    width: 400px;
+    height: 400px;
+
+}
